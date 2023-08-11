@@ -7,7 +7,13 @@ const sendMail = require('./sendMail')
 const app = express();
 
 // config de la app Express
-app.use(cors());
+// app.use(cors());
+
+app.use(cors({
+    origin: 'https://timehub-crm.web.app',
+    // 允许其他 CORS 配置，例如方法、头等
+}));
+
 app.use(express.json());
 
 
