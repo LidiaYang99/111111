@@ -1,7 +1,7 @@
 const mysql = require('mysql2');
 
 const pool = mysql.createPool({
-    host: 'test remoto',
+    host: 'db4free.net',
     user: 'lidia888',
     password: 'dcec6ac3',
     port: 3306,
