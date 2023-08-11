@@ -1,0 +1,243 @@
+@host =  http://localhost
+@port = 3000
+@apiAdmins = /api/admins
+@apiUsuarios = /api/usuarios
+@apiProyectos = /api/proyectos
+@apiDepartamentos = /api/departamentos
+
+###
+
+GET {{host}}:{{port}}{{apiAdmins}}
+
+
+###
+
+GET {{host}}:{{port}}{{apiAdmins}}/profile
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEwLCJleHAiOjE2OTA5Njk0NDEsImlhdCI6MTY4OTY3MzQ0MX0.6qDC-8xNIQJZxQwbGpt8r7SAePzXy4Dhi3q4J54oYqM
+
+###
+PUT {{host}}:{{port}}{{apiAdmins}}/2
+Content-Type: application/json
+
+{
+    "nombre": "Juan",
+    "apellidos": "Lopez",
+    "email": "juanlopez@hotmail.com",
+    "password":132465
+  }
+
+###
+POST {{host}}:{{port}}{{apiAdmins}}/registro
+Content-Type: application/json
+
+{
+    "nombre": "test132",
+    "apellidos": "Jose",
+    "email": "test132@hotmail.com",
+    "password":"123456798"
+}
+
+###
+POST {{host}}:{{port}}{{apiAdmins}}/login
+Content-Type: application/json
+
+{
+    "nombre": "Maria",
+    "apellidos": "Jose",
+    "email": "mariajose@hotmail.com",
+    "password":"123456"
+}
+
+###
+GET http://localhost:3000/api/usuarios/
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEwLCJleHAiOjE2OTA5Njk0NDEsImlhdCI6MTY4OTY3MzQ0MX0.6qDC-8xNIQJZxQwbGpt8r7SAePzXy4Dhi3q4J54oYqM
+
+###
+DELETE {{host}}:{{port}}{{apiAdmins}}/2
+
+#########################
+##   API USUARIOS     ##
+#########################
+
+
+
+###
+GET {{host}}:{{port}}{{apiUsuarios}}
+Authorization: 
+GET {{host}}:{{port}}{{apiUsuarios}}/profile
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjI3NSwidXNlclJvbCI6InVzZXIiLCJleHAiOjE2OTIyNzgyMzMsImlhdCI6MTY5MDExODIzM30.3jvLKFO6kF_GiO1FBcJBK5gbwAfmP-Z5nA3BVwv7zXY
+
+###
+GET {{host}}:{{port}}{{apiUsuarios}}/6
+Authorization: 
+
+###
+GET {{host}}:{{port}}{{apiUsuarios}}/2023-07-17
+Authorization:
+
+###
+POST {{host}}:{{port}}{{apiUsuarios}}/login/user
+Content-Type: application/json
+
+{
+  "email": "danteroccu@hotmail.com",
+  "password": "loboLA22@"
+}
+###
+POST {{host}}:{{port}}{{apiUsuarios}}/getweek
+Content-Type: application/json
+
+{
+  "usuarios_id": 267,
+  "fecha_inicio": "2023-07-17",
+  "fecha_fin": "2023-07-26"
+
+}
+
+
+###
+POST {{host}}:{{port}}{{apiUsuarios}}
+Content-Type: application/json
+
+{
+  "nombre": "claudia",
+  "apellidos": "lopez",
+  "dni": "71206752N",
+  "email": "claudiaaab@gmail.com",
+  "password":"123456",
+  "telefono": 666778887,
+  "estado":1,
+  "fecha_alta": "2023-03-27",
+  "departamento":"frontend"
+  
+}
+
+###
+PUT {{host}}:{{port}}{{apiUsuarios}}/251
+Content-Type: application/json
+
+{
+  "nombre": "claudia",
+  "apellidos": "lopez",
+  "dni": "71206773n",
+  "email": "claudialopez@gmail.com",
+  "password":"123456",
+  "telefono": 666668886,
+  "estado":1,
+  "fecha_alta": "2023-03-27",
+  "departamento_id":"1"
+  
+}
+  
+###
+POST {{host}}:{{port}}{{apiUsuarios}}/profile/horasdedicadas
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjI2NCwidXNlclJvbCI6InVzZXIiLCJleHAiOjE2OTI0NDA0NDUsImlhdCI6MTY5MDI4MDQ0NX0.pkedwKlCgR-OEO2n1b8-0SHt7mRsRFuup600DPzhlgM
+Content-Type: application/json
+
+{
+  "proyectos_id": 1,
+  "hora_entrada": "08:00",
+  "hora_salida": "18:00",
+  "fecha": "2023-07-26"
+}
+
+
+
+###
+PUT {{host}}:{{port}}{{apiUsuarios}}/editar/4
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsImV4cCI6MTY5MDk2ODY3NywiaWF0IjoxNjg5NjcyNjc3fQ.gNxURPJ87nrPtOjHcjLFizw4nYjOOjsJEDN1bh6WghI
+Content-Type: application/json
+
+{
+  "id": 4,
+  "nombre": "caca",
+  "apellidos": "perro",
+  "dni": "95024261Z",
+  "email": "caca@hotmail.com",
+  "password": "$2a$08$nui6LdFHX89UVHqL6OsgGOUVWAj6zI1HD.tG5pb04JTAyHq7YIL/a",
+  "telefono": 665544556,
+  "fecha_alta": "2023-07-19",
+  "estado": 1,
+  "departamento": "frontend"
+}
+
+###
+PUT {{host}}:{{port}}{{apiUsuarios}}/editar/user/4
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsImV4cCI6MTY5MDk2ODY3NywiaWF0IjoxNjg5NjcyNjc3fQ.gNxURPJ87nrPtOjHcjLFizw4nYjOOjsJEDN1bh6WghI
+Content-Type: application/json
+
+{
+  "email": "cacaculo@hotmail.com",
+  "password": "$2a$08$nui6LdFHX89UVHqL6OsgGOUVWAj6zI1HD.tG5pb04JTAyHq7YIL/a",
+  "telefono": 665566655
+}
+
+###
+DELETE {{host}}:{{port}}{{apiUsuarios}}/251
+
+#########################
+##    API PROYECTOS    ##
+#########################
+
+###
+GET {{host}}:{{port}}{{apiProyectos}}
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsImV4cCI6MTY5MDk2ODY3NywiaWF0IjoxNjg5NjcyNjc3fQ.gNxURPJ87nrPtOjHcjLFizw4nYjOOjsJEDN1bh6WghI
+
+###
+GET {{host}}:{{port}}{{apiProyectos}}/horasporproyecto/7
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsImV4cCI6MTY5MDk2ODY3NywiaWF0IjoxNjg5NjcyNjc3fQ.gNxURPJ87nrPtOjHcjLFizw4nYjOOjsJEDN1bh6WghI
+
+###
+PUT {{host}}:{{port}}{{apiProyectos}}/editar/3
+Content-Type: application/json
+
+{
+    "nombre": "test888",
+    "descripcion": "Test123888"
+  }
+
+###
+POST {{host}}:{{port}}{{apiProyectos}}
+Content-Type: application/json
+
+{
+    "nombre": "test456",
+    "descripcion": "Test12345"
+  }
+
+###
+DELETE {{host}}:{{port}}{{apiProyectos}}/5
+
+###
+get {{host}}:{{port}}{{apiProyectos}}/1/07
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsImV4cCI6MTY5MDk2ODY3NywiaWF0IjoxNjg5NjcyNjc3fQ.gNxURPJ87nrPtOjHcjLFizw4nYjOOjsJEDN1bh6WghI
+###
+get {{host}}:{{port}}{{apiProyectos}}
+
+###
+post http://localhost:3000/send-email
+Content-Type: application/json
+
+{
+    "email": "vanessaduquerubio@gmail.com"
+  }
+
+### 
+post http://localhost:3000/api/usuarios/getTime
+Content-Type: application/json
+
+{
+    "usuarios_Id": "6",
+    "fecha": "2023-07-17"
+  }
+
+###
+get {{host}}:{{port}}{{apiProyectos}}/obtener/proyecto/1
+
+###
+get {{host}}:{{port}}{{apiProyectos}}/obtener/horasextra/7
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjI4MywidXNlclJvbCI6InVzZXIiLCJleHAiOjE2OTI2MTA0NDYsImlhdCI6MTY5MDQ1MDQ0Nn0.tgqjzCKB63X7j17gMNpjYIMoLmoioe1ayWHRc42oHXA
+
+
+
+
