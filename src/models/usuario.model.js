@@ -23,7 +23,7 @@ const updateUser = (usuarioId, { nombre, apellidos, dni, email, password, telefo
 
 const updateUserUser = (usuarioId, { email, password, telefono }) => {
     return db.query(
-        'update usuarios set  email=?, password=?, telefono=? where id=?',
+        'update usuarios set email=?, password=?, telefono=? where id=?',
         [email, password, telefono, usuarioId]
     );
 
@@ -55,7 +55,7 @@ const insertHour = (usuarios_id, proyectos_id, hora_entrada, hora_salida, fecha)
     console.log('id', usuarios_id, 'proyecto_id', proyectos_id, 'entrada', hora_entrada, 'salida', hora_salida, 'fecha', fecha)
 
     return db.query(
-        `insert into usuarios_has_proyectos (usuarios_id, proyectos_id, horas_dedicadas,  hora_entrada,hora_salida,fecha) values (?, ?, round((time_to_sec(?) - time_to_sec(?))/3600, 2),?,?,?)`,
+        `insert into usuarios_has_proyectos (usuarios_id, proyectos_id, horas_dedicadas, hora_entrada,hora_salida,fecha) values (?, ?, round((time_to_sec(?) - time_to_sec(?))/3600, 2),?,?,?)`,
         [usuarios_id, proyectos_id, hora_salida, hora_entrada, hora_entrada, hora_salida, fecha]
     )
 
