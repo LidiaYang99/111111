@@ -26,9 +26,15 @@ const deleteProyecto = (proyectoId) => {
     )
 }
 
+// const getMonth = (usuarioId, proyectoId, mes) => {
+//     return db.query(
+//         'select up.horas_dedicadas, up.fecha, p.nombre from mydb.usuarios_has_proyectos as up, proyectos as p where p.id=up.proyectos_id and usuarios_id=? and proyectos_id=? and month(fecha)=? ', [usuarioId, proyectoId, mes]
+//     )
+// }
+
 const getMonth = (usuarioId, proyectoId, mes) => {
     return db.query(
-        'select up.horas_dedicadas, up.fecha, p.nombre from mydb.usuarios_has_proyectos as up, proyectos as p where p.id=up.proyectos_id and usuarios_id=? and proyectos_id=? and month(fecha)=? ', [usuarioId, proyectoId, mes]
+        'select up.horas_dedicadas, up.fecha, p.nombre from usuarios_has_proyectos as up, proyectos as p where p.id=up.proyectos_id and usuarios_id=? and proyectos_id=? and month(fecha)=?', [usuarioId, proyectoId, mes]
     )
 }
 

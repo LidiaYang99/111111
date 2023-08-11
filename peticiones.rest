@@ -223,7 +223,7 @@ post http://localhost:3000/send-email
 Content-Type: application/json
 
 {
-    "email": "vanessaduquerubio@gmail.com"
+    "email": "lidiayang104@gmail.com"
   }
 
 ### 
