@@ -44,18 +44,18 @@ const getHour = (usuarioId, fecha) => {
 }
 
 const registerHour = ({ usuario_id, proyecto_id, horas_dedicadas, fecha }) => {
-    return db.query('INSERT INTO mydb.Usuarios_has_proyectos (Usuarios_id, proyectos_id, horas_dedicadas, fecha) VALUES (?, ?, ?, ?)', [usuario_id, proyecto_id, horas_dedicadas, fecha]);
+    return db.query('insert into usuarios_has_proyectos (usuarios_id, proyectos_id, horas_dedicadas, fecha) values(?, ?, ?, ?)', [usuario_id, proyecto_id, horas_dedicadas, fecha]);
 };
 
 const getByEmailUser = (email) => {
-    return db.query('select * from Usuarios where email = ?', [email]);
+    return db.query('select * from usuarios where email = ?', [email]);
 }
 
 const insertHour = (usuarios_id, proyectos_id, hora_entrada, hora_salida, fecha) => {
     console.log('id', usuarios_id, 'proyecto_id', proyectos_id, 'entrada', hora_entrada, 'salida', hora_salida, 'fecha', fecha)
 
     return db.query(
-        `INSERT INTO usuarios_has_proyectos (usuarios_id, proyectos_id, horas_dedicadas,  hora_entrada,hora_salida,fecha) VALUES (?, ?, ROUND((TIME_TO_SEC(?) - TIME_TO_SEC(?))/3600, 2),?,?,?)`,
+        `insert into usuarios_has_proyectos (usuarios_id, proyectos_id, horas_dedicadas,  hora_entrada,hora_salida,fecha) values (?, ?, round((time_to_sec(?) - time_to_sec(?))/3600, 2),?,?,?)`,
         [usuarios_id, proyectos_id, hora_salida, hora_entrada, hora_entrada, hora_salida, fecha]
     )
 
@@ -66,11 +66,11 @@ const getByIdUserProyect = (usuarios_id) => {
 }
 
 const getTime = ({ usuarios_Id, fecha }) => {
-    return db.query('select SUM(horas_dedicadas) as sum from usuarios_has_proyectos where Usuarios_id = ? AND fecha = ?', [usuarios_Id, fecha])
+    return db.query('select sum(horas_dedicadas) as sum from usuarios_has_proyectos where usuarios_id = ? and fecha = ?', [usuarios_Id, fecha])
 }
 
 const getTimeWeek = ({ usuarios_id, fecha_inicio, fecha_fin }) => {
-    return db.query('SELECT ROUND(SUM(horas_dedicadas))as total_horas_semana FROM usuarios_has_proyectos WHERE usuarios_id = ? AND fecha BETWEEN ? AND ?', [usuarios_id, fecha_inicio, fecha_fin])
+    return db.query('select round(sum(horas_dedicadas))as total_horas_semana from usuarios_has_proyectos where usuarios_id = ? and fecha between ? and ?', [usuarios_id, fecha_inicio, fecha_fin])
 }
 
 module.exports = {

@@ -11,6 +11,12 @@ GET {{host}}:{{port}}{{apiAdmins}}
 
 
 ###
+GET http://testremoto:3000/api/admins
+
+
+
+
+###
 
 GET {{host}}:{{port}}{{apiAdmins}}/profile
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEwLCJleHAiOjE2OTA5Njk0NDEsImlhdCI6MTY4OTY3MzQ0MX0.6qDC-8xNIQJZxQwbGpt8r7SAePzXy4Dhi3q4J54oYqM
@@ -42,10 +48,9 @@ POST {{host}}:{{port}}{{apiAdmins}}/login
 Content-Type: application/json
 
 {
-    "nombre": "Maria",
-    "apellidos": "Jose",
-    "email": "mariajose@hotmail.com",
-    "password":"123456"
+
+    "email": "tom123@hotmail.com",
+    "password":"Abc123456"
 }
 
 ###
@@ -62,8 +67,6 @@ DELETE {{host}}:{{port}}{{apiAdmins}}/2
 
 
 ###
-GET {{host}}:{{port}}{{apiUsuarios}}
-Authorization: 
 GET {{host}}:{{port}}{{apiUsuarios}}/profile
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjI3NSwidXNlclJvbCI6InVzZXIiLCJleHAiOjE2OTIyNzgyMzMsImlhdCI6MTY5MDExODIzM30.3jvLKFO6kF_GiO1FBcJBK5gbwAfmP-Z5nA3BVwv7zXY
 
@@ -80,17 +83,18 @@ POST {{host}}:{{port}}{{apiUsuarios}}/login/user
 Content-Type: application/json
 
 {
-  "email": "danteroccu@hotmail.com",
-  "password": "loboLA22@"
+  "email": "antonio756@hotmail.com",
+  "password": "Abc123456"
+
 }
 ###
 POST {{host}}:{{port}}{{apiUsuarios}}/getweek
 Content-Type: application/json
 
 {
-  "usuarios_id": 267,
-  "fecha_inicio": "2023-07-17",
-  "fecha_fin": "2023-07-26"
+  "usuarios_id": 272,
+  "fecha_inicio": "2023-07-25",
+  "fecha_fin": "2023-08-11"
 
 }
 
